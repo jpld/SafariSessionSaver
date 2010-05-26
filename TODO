@@ -1,0 +1,6 @@
+
+[ ] quickly port existing sss prototype from RubyCocoa sss MacRuby
+
+LATER
+[ ] consider making sss installable as a gem, via jeweler
+[ ] Dropbox as backing store
