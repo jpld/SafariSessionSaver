@@ -3,6 +3,7 @@
 [ ] figure out how to make the whole save process more robust if the user is mucking around with the windows mid-save
 
 LATER
-[ ] wrap sss with a menu extra
-[ ] consider making sss installable as a gem, via jeweler
 [ ] Dropbox as backing store
+[ ] save and restore windows to the proper space - don't know of any means of fetching the space info
+[ ] consider making sss installable as a gem, via jeweler
+[ ] wrap sss with a menu extra
