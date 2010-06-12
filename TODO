@@ -1,4 +1,8 @@
 
 NOW
+[ ] fetch window > tab > URI on demand
+[ ] store session specifics into local storage
+[ ] toolbar button to activate tool UI
 
 LATER
+[ ] always listening to generate "current" session
