@@ -9,8 +9,15 @@
   <meta name="author" content="jpld">
 
   <script type="text/javascript">
-  <!--
-  -->
+    function performCommand(event) {
+      alert(event.command);
+
+      if (event.command === "logSessionDetails") {
+        window.console.log("log session");
+      }
+    }
+
+    safari.application.addEventListener("command", performCommand, false);
   </script>
 </head>
 <body>
