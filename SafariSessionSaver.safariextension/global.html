@@ -11,10 +11,15 @@
 
   <script type="text/javascript">
     function performCommand(event) {
-      alert(event.command);
 
       if (event.command === "logSessionDetails") {
-        window.console.log("log session");
+        var numberOfTabs = 0;
+        var windows = safari.application.browserWindows;
+        for (var idx = 0; idx < windows.length; idx++) {
+          numberOfTabs += windows[idx].tabs.length;
+        }
+
+        alert(windows.length + " windows for a total of " + numberOfTabs + " tabs");
       }
     }
 
