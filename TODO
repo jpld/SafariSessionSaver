@@ -9,6 +9,7 @@ NOW
 [ ] record and restore the minimized state, window 'visibility'
 [ ] create 32x32, 48x48 and 64x64 bundle icons
 [ ] provide URL for update manifest
+[ ] add extension setting to clear all saved sessions
 
 LATER
 [ ] store save timestamp
