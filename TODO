@@ -2,7 +2,8 @@
 NOW
 [X] toolbar button to activate tool UI
 [X] fetch window > tab > URI on demand
-[ ] store session specifics into local storage
+[ ] save session specifics into local storage
+[ ] restore session from local storage
 [ ] record and restore the active tab state
 [ ] record and restore the minimized state, window 'visibility'
 [ ] create 32x32, 48x48 and 64x64 bundle icons
@@ -10,3 +11,5 @@ NOW
 
 LATER
 [ ] always listening to generate "current" session
+[ ] extension setting to enable "current" session
+[ ] store sessions on an external site from multi-computer access
