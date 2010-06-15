@@ -14,7 +14,7 @@
   <link href="css/reset.css" media="screen, projection, print" rel="stylesheet" type="text/css">
   <!--[if IE]>
   <link href="css/ie.css" media="screen, projection, print" rel="stylesheet" type="text/css">
-  <![endif]--> 
+  <![endif]-->
   <style type="text/css" media="screen">
     body {font:normal normal normal 1.4em Helvatica, sans-serif; margin:10px 10px;}
   </style>
@@ -23,13 +23,29 @@
   <script type="text/javascript">
   <!--
     $(document).ready(function() {
-      // something
+      localStorage.removeItem('list');
+
+      var list = new Array();
+      list.push({ 'name': 'nick', 'age': 17 });
+      list.push({ 'name': 'peter', 'age': 21 });
+      list.push({ 'name': 'emily', 'age': 26 });
+      list.push({ 'name': 'joan' });
+      list.push({ 'name': 'george' });
+      localStorage.setItem('list', JSON.stringify(list));
+
+      var retrievedObject = localStorage.getItem('list');
+      var newList = JSON.parse(retrievedObject);
+      for (var idx = 0; idx < newList.length; idx++) {
+        var person = newList[idx];
+        console.log(person.name);
+      }
     });
   -->
   </script>
 </head>
 <body>
   <div>
+    Poke. Prod. Probe.
   </div>
 </body>
 </html>
