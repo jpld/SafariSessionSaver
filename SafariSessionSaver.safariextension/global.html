@@ -11,12 +11,20 @@
 
   <script type="text/javascript">
     function performCommand(event) {
-
+      // TODO - perhaps we could bail if it isn't what we are looking for instead
       if (event.command === "logSessionDetails") {
         var numberOfTabs = 0;
         var windows = safari.application.browserWindows;
-        for (var idx = 0; idx < windows.length; idx++) {
-          numberOfTabs += windows[idx].tabs.length;
+        for (var windowIdx = 0; windowIdx < windows.length; windowIdx++) {
+          var window = windows[windowIdx];
+          var tabs = window.tabs;
+          for (var tabIdx = 0; tabIdx < tabs.length; tabIdx++) {
+            var tab = tabs[tabIdx];
+            // ignore empty tabs?
+            // if (!tab.url || tab.url === "")
+            //   continue;
+            numberOfTabs++;
+          }
         }
 
         alert(windows.length + " windows for a total of " + numberOfTabs + " tabs");
