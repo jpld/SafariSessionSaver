@@ -3,6 +3,7 @@ NOW
 [X] toolbar button to activate tool UI
 [X] fetch window > tab > URI on demand
 [ ] save session specifics into local storage
+[ ] add quota error check on setItem, QUOTA_EXCEEDED_ERR
 [ ] restore session from local storage
 [ ] record and restore the active tab state
 [ ] record and restore the minimized state, window 'visibility'
@@ -10,6 +11,8 @@ NOW
 [ ] provide URL for update manifest
 
 LATER
+[ ] store save timestamp
+[ ] store into relational db for sorting?
 [ ] always listening to generate "current" session
 [ ] extension setting to enable "current" session
 [ ] store sessions on an external site from multi-computer access
