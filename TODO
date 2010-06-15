@@ -1,10 +1,11 @@
 
 NOW
-[ ] fetch window > tab > URI on demand
-[ ] record and restore the minimized state, window 'visibility'
+[X] toolbar button to activate tool UI
+[X] fetch window > tab > URI on demand
 [ ] store session specifics into local storage
-[ ] toolbar button to activate tool UI
-[ ] create 32x32, 48x48 and 64x64 icons
+[ ] record and restore the active tab state
+[ ] record and restore the minimized state, window 'visibility'
+[ ] create 32x32, 48x48 and 64x64 bundle icons
 [ ] provide URL for update manifest
 
 LATER
