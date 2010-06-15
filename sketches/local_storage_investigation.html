@@ -17,6 +17,8 @@
   <![endif]-->
   <style type="text/css" media="screen">
     body {font:normal normal normal 1.4em Helvatica, sans-serif; margin:10px 10px;}
+    #people {margin-top:0.5em;}
+    #people div {color:gray;}
   </style>
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js" type="text/javascript"></script>
@@ -37,15 +39,15 @@
       var newList = JSON.parse(retrievedObject);
       for (var idx = 0; idx < newList.length; idx++) {
         var person = newList[idx];
-        console.log(person.name);
+        var string = person.name + ((person.age != undefined) ? ' (' + person.age + ')' : '');
+        $('#people').append('<div>' + string + '</div>');
       }
     });
   -->
   </script>
 </head>
 <body>
-  <div>
-    Poke. Prod. Probe.
-  </div>
+  <div>people plucked from local storage:</div>
+  <div id="people"></div>
 </body>
 </html>
