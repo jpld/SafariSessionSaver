@@ -33,13 +33,21 @@
       return sessionWindows;
     }
 
+    function store(name) {
+      // TODO - add date
+      var session = {windows : sessionWindows(), date : ''};
+      localStorage.setItem(name, JSON.stringify(session));      
+    }
+
+    function recall(name) {
+      alert('recall');
+    }
+
     function performCommand(event) {
       if (event.command === "storeSession") {
-        var session = {windows : sessionWindows(), date : ''};
-        // for now store with a fixed key, which is the session name
-        localStorage.setItem(SESSION_NAME, JSON.stringify(session));
+        store(SESSION_NAME);
       } else if (event.command === "recallSession") {
-        alert('recall');
+        recall(SESSION_NAME);
       }
     }
 
@@ -49,7 +57,7 @@
       }
     }
 
-    // setup toolbar event handler
+    // setup toolbar event handlers
     safari.application.addEventListener("command", performCommand, false);
     safari.application.addEventListener("validate", validateToolbarEvent, false);
   </script>
