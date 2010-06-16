@@ -42,7 +42,7 @@
 				<key>Image</key>
 				<string>toobar_button.png</string>
 				<key>Label</key>
-				<string>Recall stored browsing session</string>
+				<string>Recall the stored browsing session</string>
 				<key>Palette Label</key>
 				<string>Recall Session</string>
 			</dict>

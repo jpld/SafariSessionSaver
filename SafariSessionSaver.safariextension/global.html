@@ -43,8 +43,15 @@
       }
     }
 
+    function validateToolbarEvent(event) {
+      if (event.command === "recallSession") {
+        event.target.disabled = localStorage.length == 0;
+      }
+    }
+
     // setup toolbar event handler
     safari.application.addEventListener("command", performCommand, false);
+    safari.application.addEventListener("validate", validateToolbarEvent, false);
   </script>
 </head>
 <body>
