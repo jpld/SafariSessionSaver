@@ -24,6 +24,7 @@
             sessionWindow.activeTabIndex = tabIndex;
           sessionWindow.tabs.push(tab.url);
         }
+        sessionWindow.visible = window.visible;
         sessionWindows.push(sessionWindow);
       }
 
@@ -38,6 +39,7 @@
       }
     }
 
+    // setup toolbar event handler
     safari.application.addEventListener("command", performCommand, false);
   </script>
 </head>
