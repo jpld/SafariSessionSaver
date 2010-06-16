@@ -40,7 +40,22 @@
     }
 
     function recall(name) {
-      alert('recall');
+      var retrievedObject = localStorage.getItem(name);
+      if (!retrievedObject) {
+        alert("ERROR - session '" + name + "' not found in local storage, unable to recall");
+        return;        
+      }
+      var session = JSON.parse(retrievedObject);
+      if (!session) {
+        alert("ERROR - unable to parse stored value for session '" + name + "', unable to recall");
+        return;
+      }
+
+      // TEMP - alert session details
+      var numberOfTabs = 0;
+      for (var windowIndex = 0; windowIndex < session.windows.length; windowIndex++)
+        numberOfTabs += session.windows[windowIndex].tabs.length;
+      alert(session.windows.length + " windows, for a total of " + numberOfTabs + " tabs");
     }
 
     function performCommand(event) {
