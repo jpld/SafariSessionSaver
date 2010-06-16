@@ -33,14 +33,14 @@
 
       // JSON flattens dates strangely, use the UTC string representation to avoid issues
       var session = {windows : sessionWindows, createdAt : (new Date()).toUTCString()};
-      localStorage.setItem(name, JSON.stringify(session));      
+      localStorage.setItem(name, JSON.stringify(session));
     }
 
     function recall(name) {
       var retrievedObject = localStorage.getItem(name);
       if (!retrievedObject) {
         alert("ERROR - session '" + name + "' not found in local storage, unable to recall");
-        return;        
+        return;
       }
       var session = JSON.parse(retrievedObject);
       if (!session) {
