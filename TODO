@@ -3,7 +3,7 @@ NOW
 [X] toolbar button to activate tool UI
 [X] fetch window > tab > URI on demand
 [X] save session specifics into local storage
-[ ] restore session from local storage via temporary toolbar item
+[X] restore session from local storage via temporary toolbar item
 [~] record and restore the active tab state
 [~] record and restore the minimized state, window 'visibility'
 [ ] add proper toolbar icon(s)
@@ -14,7 +14,7 @@ NOW
 [ ] add quota error check on setItem, QUOTA_EXCEEDED_ERR
 
 LATER
-[ ] store save timestamp
+[X] store save timestamp
 [ ] store into relational db for sorting?
 [ ] always listening to generate "current" session
 [ ] extension setting to enable "current" session
