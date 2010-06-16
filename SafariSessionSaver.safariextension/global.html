@@ -38,6 +38,8 @@
         var session = {windows : sessionWindows(), date : ''};
         // for now store with a fixed key, which is the session name
         localStorage.setItem(SESSION_NAME, JSON.stringify(session));
+      } else if (event.command === "recallSession") {
+        alert('recall');
       }
     }
 

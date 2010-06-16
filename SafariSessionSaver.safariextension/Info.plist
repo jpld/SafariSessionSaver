@@ -34,6 +34,18 @@
 				<key>Palette Label</key>
 				<string>Store Session</string>
 			</dict>
+			<dict>
+				<key>Command</key>
+				<string>recallSession</string>
+				<key>Identifier</key>
+				<string>recall</string>
+				<key>Image</key>
+				<string>toobar_button.png</string>
+				<key>Label</key>
+				<string>Recall stored browsing session</string>
+				<key>Palette Label</key>
+				<string>Recall Session</string>
+			</dict>
 		</array>
 	</dict>
 	<key>Content</key>
