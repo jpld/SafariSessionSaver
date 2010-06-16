@@ -10,6 +10,8 @@
   <meta name="copyright" content="Copyright 2010 jpld. All Rights Reserved.">
 
   <script type="text/javascript">
+    var SESSION_NAME = 'SESSION_NAME';
+
     function sessionWindows() {
       var sessionWindows = new Array();
 
@@ -32,10 +34,10 @@
     }
 
     function performCommand(event) {
-      // TODO - perhaps we could bail if it isn't what we are looking for instead
       if (event.command === "logSessionDetails") {
-        var session = {windows : sessionWindows(), name : '', date : ''};
-        alert('windows ' + session.windows.length);
+        var session = {windows : sessionWindows(), date : ''};
+        // for now store with a fixed key, which is the session name
+        localStorage.setItem(SESSION_NAME, JSON.stringify(session));
       }
     }
 
