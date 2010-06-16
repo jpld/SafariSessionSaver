@@ -31,8 +31,8 @@
         sessionWindows.push(sessionWindow);
       }
 
-      // TODO - add date
-      var session = {windows : sessionWindows, date : ''};
+      // JSON flattens dates strangely, use the UTC string representation to avoid issues
+      var session = {windows : sessionWindows, date : (new Date()).toUTCString()};
       localStorage.setItem(name, JSON.stringify(session));      
     }
 
@@ -47,6 +47,9 @@
         alert("ERROR - unable to parse stored value for session '" + name + "', unable to recall");
         return;
       }
+
+      // create proper date object from stored UTC string representation
+      session.date = new Date(session.date);
 
       // TEMP - alert session details
       var numberOfTabs = 0;
