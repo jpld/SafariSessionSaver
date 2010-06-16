@@ -32,7 +32,7 @@
       }
 
       // JSON flattens dates strangely, use the UTC string representation to avoid issues
-      var session = {windows : sessionWindows, date : (new Date()).toUTCString()};
+      var session = {windows : sessionWindows, created_at : (new Date()).toUTCString()};
       localStorage.setItem(name, JSON.stringify(session));      
     }
 
@@ -49,7 +49,7 @@
       }
 
       // create proper date object from stored UTC string representation
-      session.date = new Date(session.date);
+      session.created_at = new Date(session.created_at);
 
       // TEMP - alert session details
       var numberOfTabs = 0;
