@@ -22,15 +22,17 @@
 		<array>
 			<dict>
 				<key>Command</key>
-				<string>logSessionDetails</string>
+				<string>storeSession</string>
 				<key>Identifier</key>
-				<string>log</string>
+				<string>store</string>
 				<key>Image</key>
 				<string>toobar_button.png</string>
+				<key>Include By Default</key>
+				<true/>
 				<key>Label</key>
-				<string>Log Session Details</string>
+				<string>Store the current browsing session</string>
 				<key>Palette Label</key>
-				<string>Log Session Details</string>
+				<string>Store Session</string>
 			</dict>
 		</array>
 	</dict>

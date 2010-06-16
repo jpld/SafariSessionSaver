@@ -34,7 +34,7 @@
     }
 
     function performCommand(event) {
-      if (event.command === "logSessionDetails") {
+      if (event.command === "storeSession") {
         var session = {windows : sessionWindows(), date : ''};
         // for now store with a fixed key, which is the session name
         localStorage.setItem(SESSION_NAME, JSON.stringify(session));
