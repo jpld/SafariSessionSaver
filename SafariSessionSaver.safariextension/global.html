@@ -12,7 +12,8 @@
   <script type="text/javascript">
     var SESSION_NAME = 'SESSION_NAME';
 
-    function sessionWindows() {
+    // primary commands
+    function store(name) {
       var sessionWindows = new Array();
 
       var windows = safari.application.browserWindows;
@@ -30,12 +31,8 @@
         sessionWindows.push(sessionWindow);
       }
 
-      return sessionWindows;
-    }
-
-    function store(name) {
       // TODO - add date
-      var session = {windows : sessionWindows(), date : ''};
+      var session = {windows : sessionWindows, date : ''};
       localStorage.setItem(name, JSON.stringify(session));      
     }
 
@@ -58,6 +55,7 @@
       alert(session.windows.length + " windows, for a total of " + numberOfTabs + " tabs");
     }
 
+    // event handlers
     function performCommand(event) {
       if (event.command === "storeSession") {
         store(SESSION_NAME);
