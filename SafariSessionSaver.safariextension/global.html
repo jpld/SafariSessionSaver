@@ -35,16 +35,16 @@
 
       var windows = safari.application.browserWindows;
       for (var windowIndex = 0; windowIndex < windows.length; windowIndex++) {
-        var window = windows[windowIndex];
+        var safariWindow = windows[windowIndex];
         var sessionWindow = {tabs : new Array()};
-        var tabs = window.tabs;
+        var tabs = safariWindow.tabs;
         for (var tabIndex = 0; tabIndex < tabs.length; tabIndex++) {
           var tab = tabs[tabIndex];
-          if (tab == window.activeTab)
+          if (tab == safariWindow.activeTab)
             sessionWindow.activeTabIndex = tabIndex;
           sessionWindow.tabs.push(tab.url);
         }
-        sessionWindow.visible = window.visible;
+        sessionWindow.visible = safariWindow.visible;
         sessionWindows.push(sessionWindow);
       }
 
