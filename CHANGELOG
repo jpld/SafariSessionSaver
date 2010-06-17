@@ -1,2 +1,5 @@
+v0.1.1 (17 Jun 2010)
+* add update manifest to support auto-upgrading
+
 v0.1.0 (16 Jun 2010)
 * initial release
