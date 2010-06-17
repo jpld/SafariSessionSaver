@@ -12,6 +12,23 @@
   <script type="text/javascript">
     var SESSION_NAME = 'SESSION_NAME';
 
+    function fetchSessionWithName(name) {
+      var retrievedObject = localStorage.getItem(name);
+      if (!retrievedObject) {
+        alert("ERROR - session '" + name + "' not found in local storage, unable to recall");
+        return null;
+      }
+      var session = JSON.parse(retrievedObject);
+      if (!session) {
+        alert("ERROR - unable to parse stored value for session '" + name + "', unable to recall");
+        return null;
+      }
+
+      // create proper date object from stored UTC string representation
+      session.createdAt = new Date(session.createdAt);
+      return session;
+    }
+
     // primary commands
     function store(name) {
       var sessionWindows = new Array();
@@ -37,19 +54,11 @@
     }
 
     function recall(name) {
-      var retrievedObject = localStorage.getItem(name);
-      if (!retrievedObject) {
-        alert("ERROR - session '" + name + "' not found in local storage, unable to recall");
-        return;
-      }
-      var session = JSON.parse(retrievedObject);
+      var session = fetchSessionWithName(name);
       if (!session) {
-        alert("ERROR - unable to parse stored value for session '" + name + "', unable to recall");
+        // TODO - do something smart
         return;
       }
-
-      // create proper date object from stored UTC string representation
-      session.createdAt = new Date(session.createdAt);
 
       // TEMP - alert session details
       var numberOfTabs = 0;
