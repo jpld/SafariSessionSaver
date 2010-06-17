@@ -60,11 +60,25 @@
         return;
       }
 
-      // TEMP - alert session details
       var numberOfTabs = 0;
-      for (var windowIndex = 0; windowIndex < session.windows.length; windowIndex++)
-        numberOfTabs += session.windows[windowIndex].tabs.length;
-      alert(session.windows.length + " windows, for a total of " + numberOfTabs + " tabs");
+
+      // iterate through the session's windows and tabs
+      for (var windowIndex = 0; windowIndex < session.windows.length; windowIndex++) {
+        var sessionWindow = session.windows[windowIndex];
+        var safariWindow = safari.application.openBrowserWindow();
+        safariWindow.visible = sessionWindow.visible;
+        for (var tabIndex = 0; tabIndex < sessionWindow.tabs.length; tabIndex++) {
+          numberOfTabs++;
+          // add another tab when appropriate -- all times except the first
+          if (tabIndex >= safariWindow.tabs.length)
+            safariWindow.openTab(tabIndex == sessionWindow.activeTabIndex ? "foreground" : "background");
+          // avoid restoring empty tabs -- should we not restore them?
+          if (sessionWindow.tabs[tabIndex])
+            safariWindow.tabs[tabIndex].url = sessionWindow.tabs[tabIndex];
+        }
+      }
+
+      alert("recalled session '" + name + "' with" + session.windows.length + " windows, for a total of " + numberOfTabs + " tabs");
     }
 
     // event handlers
