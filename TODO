@@ -6,7 +6,7 @@ NOW
 [X] restore session from local storage via temporary toolbar item
 [X] record and restore the active tab state
 [~] record and restore the minimized state, window 'visibility' (no way to restore!)
-[ ] provide URL for update manifest
+[X] provide URL for update manifest
 [ ] add proper toolbar icon(s)
 [ ] create separate session manager window / UI, triggered by toolbar item
 [ ] create 32x32, 48x48 and 64x64 bundle icons
