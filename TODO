@@ -4,8 +4,8 @@ NOW
 [X] fetch window > tab > URI on demand
 [X] save session specifics into local storage
 [X] restore session from local storage via temporary toolbar item
-[~] record and restore the active tab state
-[~] record and restore the minimized state, window 'visibility'
+[X] record and restore the active tab state
+[~] record and restore the minimized state, window 'visibility' (no way to restore!)
 [ ] add proper toolbar icon(s)
 [ ] create separate session manager window / UI, triggered by toolbar item
 [ ] create 32x32, 48x48 and 64x64 bundle icons
