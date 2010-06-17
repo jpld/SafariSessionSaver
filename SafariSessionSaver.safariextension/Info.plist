@@ -11,9 +11,9 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.1.0</string>
+	<string>0.1.1</string>
 	<key>CFBundleVersion</key>
-	<string>0.1.0</string>
+	<string>0.1.1</string>
 	<key>Chrome</key>
 	<dict>
 		<key>Global Page</key>
@@ -67,6 +67,8 @@
 			<string>All</string>
 		</dict>
 	</dict>
+	<key>Update Manifest URL</key>
+	<string>http://cloud.github.com/downloads/jpld/SafariSessionSaver/manifest.plist</string>
 	<key>Website</key>
 	<string>http://github.com/jpld/SafariSessionSaver</string>
 </dict>
