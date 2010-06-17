@@ -13,6 +13,7 @@ NOW
 [ ] add means to clear all saved sessions, in manager
 [ ] add quota error check on setItem, QUOTA_EXCEEDED_ERR
 [ ] better error reporting on setItem and getItem/JSON.parse
+[ ] rakefile for automating upload of extension / manifest for release
 
 LATER
 [X] store save timestamp
