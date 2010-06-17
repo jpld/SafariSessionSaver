@@ -44,7 +44,8 @@
             sessionWindow.activeTabIndex = tabIndex;
           sessionWindow.tabs.push(tab.url);
         }
-        sessionWindow.visible = safariWindow.visible;
+        // NB - apparently there isn't a means to restore the minimized state
+        // sessionWindow.visible = safariWindow.visible;
         sessionWindows.push(sessionWindow);
       }
 
@@ -66,7 +67,6 @@
       for (var windowIndex = 0; windowIndex < session.windows.length; windowIndex++) {
         var sessionWindow = session.windows[windowIndex];
         var safariWindow = safari.application.openBrowserWindow();
-        safariWindow.visible = sessionWindow.visible;
         for (var tabIndex = 0; tabIndex < sessionWindow.tabs.length; tabIndex++) {
           numberOfTabs++;
           // add another tab when appropriate -- all times except the first
@@ -76,6 +76,8 @@
           if (sessionWindow.tabs[tabIndex])
             safariWindow.tabs[tabIndex].url = sessionWindow.tabs[tabIndex];
         }
+        // NB - apparently there isn't a means to restore the minimized state
+        // safariWindow.visible = sessionWindow.visible;
       }
 
       alert("recalled session '" + name + "' with" + session.windows.length + " windows, for a total of " + numberOfTabs + " tabs");
