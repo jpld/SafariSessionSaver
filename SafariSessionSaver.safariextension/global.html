@@ -42,7 +42,7 @@
           var tab = tabs[tabIndex];
           if (tab == safariWindow.activeTab)
             sessionWindow.activeTabIndex = tabIndex;
-          sessionWindow.tabs.push(tab.url);
+          sessionWindow.tabs.push(tab.url ? tab.url : "");
         }
         // NB - apparently there isn't a means to restore the minimized state
         // sessionWindow.visible = safariWindow.visible;
@@ -72,7 +72,7 @@
           // add another tab when appropriate -- all times except the first
           if (tabIndex >= safariWindow.tabs.length)
             safariWindow.openTab(tabIndex == sessionWindow.activeTabIndex ? "foreground" : "background");
-          // avoid restoring empty tabs -- should we not restore them?
+          // avoid restoring empty tabs
           if (sessionWindow.tabs[tabIndex])
             safariWindow.tabs[tabIndex].url = sessionWindow.tabs[tabIndex];
         }
